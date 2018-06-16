@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 7662c8b36e82bab4b9b67c46c1a322f2
 ModelImporter:
+<<<<<<< HEAD
   serializedVersion: 22
+=======
+  serializedVersion: 23
+>>>>>>> db9352a7d6492f2f81bf186f69d3aed2fe1e7254
   fileIDToRecycleName:
     100000: //RootNode
     100002: Rock8_LP1:Rock8_LP
@@ -63,6 +67,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 1

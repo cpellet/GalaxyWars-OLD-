@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: d74c02c3fd5a89644a7d71732e56b9db
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     100002: polySurface4_polySurface1
@@ -62,6 +62,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 180
     normalImportMode: 1
