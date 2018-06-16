@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2018-06-15T15:53:51.905+02:00
-  initializedAtString: 2018-06-15T15:53:51.905+02:00
+  lastUpdatedAtString: 2018-06-16T17:18:18.583+04:00
+  initializedAtString: 2018-06-16T17:18:18.583+04:00
   currentGitRemote:
     name: origin
     url: https://github.com/cpellet/GalaxyWars.git
@@ -23,15 +23,15 @@ MonoBehaviour:
     function: 0
     token: 
   currentGitBranch:
-    name: master
-    tracking: origin/master
+    name: alpha-features
+    tracking: origin/alpha-features
   currentConfigBranch:
-    name: master
+    name: alpha-features
     remote:
       name: origin
       url: https://github.com/cpellet/GalaxyWars.git
-    trackingBranch: master
+    trackingBranch: alpha-features
   currentConfigRemote:
     name: origin
     url: https://github.com/cpellet/GalaxyWars.git
-  currentHead: e8b47e3
+  currentHead: e923d76

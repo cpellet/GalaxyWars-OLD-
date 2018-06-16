@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/WormsGame/Scenes/Worms.unity
+  isLoaded: 1
+  isActive: 1
