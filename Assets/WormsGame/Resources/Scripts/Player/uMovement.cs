@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Utility;
+
 public class uMovement : MonoBehaviour
 {
     private CharacterController characterController => GetComponent<CharacterController>();
@@ -30,11 +32,15 @@ public class uMovement : MonoBehaviour
 
     public void Move(Vector2 direction)
     {
-        if (characterController.isGrounded && (lastForce + 0.1f < Time.time))
+        if (characterController.isGrounded && (lastForce + 0.1f < Time.time) && direction.sqrMagnitude > 0.1f)
         {
             moveDirection.x = direction.x;
-
             moveDirection.z = direction.y;
+        }
+        else
+        {
+            moveDirection.x = 0;
+            moveDirection.z = 0;
         }
     }
 
@@ -49,7 +55,8 @@ public class uMovement : MonoBehaviour
 
     private void ApplyMovement()
     {
-        characterController.Move(cameraPivot.TransformDirection(moveDirection) * Time.deltaTime * 10);
+        Vector3 newmove = cameraPivot.TransformDirection(moveDirection) * Time.deltaTime * 10;
+        characterController.Move(newmove);
     }
 
     public void ApplyForce(Vector3 origin, float force, float radius)

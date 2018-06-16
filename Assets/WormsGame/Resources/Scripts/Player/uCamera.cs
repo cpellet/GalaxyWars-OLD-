@@ -6,6 +6,9 @@ using System;
 
 public class uCamera : MonoBehaviour
 {
+    [SerializeField] private float angleMultiplier = 20;
+
+
     private Transform cameraObject => transform.Find("camera");
     private Transform cameraPivot => transform.Find("camera_pivot");
     private Transform playerObject => transform.Find("active_model");
@@ -33,23 +36,29 @@ public class uCamera : MonoBehaviour
             rotation += 85 * Time.deltaTime;
         }
 
-        var rotate = Quaternion.Euler(cameraPivot.eulerAngles.x, rotation, cameraPivot.eulerAngles.z);
+        var rotate = Quaternion.Euler(0, rotation, 0);
 
         cameraPivot.rotation = Quaternion.Lerp(cameraPivot.rotation, rotate, Time.deltaTime * 7);
     }
 
     public void MoveCamera()
     {
-        cameraObject.position = cameraPivot.position - cameraPivot.forward * (zoom / 2) + Vector3.up * (zoom * angle);
-
         // targetPosition = playerObject.position;
-
         // cameraPivot.position = Vector3.SmoothDamp(cameraPivot.position, targetPosition, ref velocity, 0.25f);
 
-        cameraPivot.position = transform.position + Vector3.up * (10 - (angle * 10));
+        cameraObject.position = playerObject.position - cameraPivot.forward * (zoom / 2) + Vector3.up * zoom;
+        cameraPivot.position = transform.position + Vector3.up * ((zoom / 2) - angle * angleMultiplier);
 
         cameraObject.LookAt(cameraPivot);
     }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(1, 0, 0, .5f);
+        Gizmos.DrawSphere(cameraPivot.position, .4f);
+    }
+#endif
 
     public void ZoomCamera(bool left_up, bool left_down)
     {

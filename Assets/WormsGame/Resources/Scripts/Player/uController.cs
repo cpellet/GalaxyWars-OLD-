@@ -10,6 +10,9 @@ public class uController : NetworkBehaviour
     private Vector3 moveTo { get; set; }
     private Quaternion rotateTo { get; set; }
 
+    private uMovement playerMovement;
+    private uCamera playerCamera;
+
     private int _owner = -1;
     public int Owner
     {
@@ -52,9 +55,11 @@ public class uController : NetworkBehaviour
 
             GetComponent<CharacterController>().enabled = true;
 
-            GetComponent<uMovement>().enabled = true;
+            playerMovement = GetComponent<uMovement>();
+            playerMovement.enabled = true;
 
-            GetComponent<uCamera>().enabled = true;
+            playerCamera = GetComponent<uCamera>();
+            playerCamera.enabled = true;
         }
     }
 
@@ -76,17 +81,17 @@ public class uController : NetworkBehaviour
 
     private void ApplyInput()
     {
-        GetComponent<uMovement>().Move(new Vector2(Owner.GetAxis("L_HORIZONTAL"), -Owner.GetAxis("L_VERTICAL")));
+        playerMovement.Move(new Vector2(Owner.GetAxis("L_HORIZONTAL"), -Owner.GetAxis("L_VERTICAL")));
 
-        GetComponent<uCamera>().RotateCamera(Owner.GetButton("L_BUTTON"), Owner.GetButton("R_BUTTON"));
+        playerCamera.RotateCamera(Owner.GetButton("L_BUTTON"), Owner.GetButton("R_BUTTON"));
 
-        GetComponent<uCamera>().MoveCamera();
+        playerCamera.MoveCamera();
 
-        GetComponent<uCamera>().ZoomCamera(Owner.GetButton("DPAD_UP"), Owner.GetButton("DPAD_DOWN"));
+        playerCamera.ZoomCamera(Owner.GetButton("DPAD_UP"), Owner.GetButton("DPAD_DOWN"));
 
-        GetComponent<uCamera>().AngleCamera(Owner.GetButton("DPAD_LEFT"), Owner.GetButton("DPAD_RIGHT"));
+        playerCamera.AngleCamera(Owner.GetButton("DPAD_LEFT"), Owner.GetButton("DPAD_RIGHT"));
 
-        GetComponent<uMovement>().Rotate(new Vector3(Owner.GetAxis("R_HORIZONTAL"), 0, -Owner.GetAxis("R_VERTICAL")));
+        playerMovement.Rotate(new Vector3(Owner.GetAxis("R_HORIZONTAL"), 0, -Owner.GetAxis("R_VERTICAL")));
     }
 
 

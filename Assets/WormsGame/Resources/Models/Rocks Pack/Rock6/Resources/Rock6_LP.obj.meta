@@ -1,27 +1,23 @@
 fileFormatVersion: 2
 guid: fc2857bcb6dd514468e9c119c5b9ce18
 ModelImporter:
-<<<<<<< HEAD
   serializedVersion: 22
-=======
-  serializedVersion: 23
->>>>>>> db9352a7d6492f2f81bf186f69d3aed2fe1e7254
   fileIDToRecycleName:
     100000: //RootNode
     100002: Rock6_LP1:Rock6_LP
     400000: //RootNode
     400002: Rock6_LP1:Rock6_LP
+    2100000: Rock6_LP1_Rock6_LPMat
     2300000: Rock6_LP1:Rock6_LP
     3300000: Rock6_LP1:Rock6_LP
     4300000: Rock6_LP1:Rock6_LP
-    6400000: Rock6_LP1:Rock6_LP
-    11100000: //RootNode
+    9500000: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -47,13 +43,13 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 4
+    globalScale: 1
     meshCompression: 0
-    addColliders: 1
-    importVisibility: 0
+    addColliders: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -61,19 +57,17 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 180
-    normalImportMode: 1
-    tangentImportMode: 4
-    normalCalculationMode: 0
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -91,9 +85,9 @@ ModelImporter:
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 1
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
