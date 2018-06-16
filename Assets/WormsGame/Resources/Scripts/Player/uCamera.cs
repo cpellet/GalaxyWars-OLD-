@@ -11,6 +11,7 @@ public class uCamera : MonoBehaviour
 
     [SerializeField] private float MinAngleClamp = 0.2f;
     [SerializeField] private float MaxAngleClamp = 1f;
+    [SerializeField] private float AngleSpeed = 2f;
 
     [SerializeField] private int MinZoomClamp = 20;
     [SerializeField] private int MaxZoomClamp = 50;
@@ -19,29 +20,18 @@ public class uCamera : MonoBehaviour
     private Transform cameraObject => transform.Find("camera");
     private Transform cameraPivot => transform.Find("camera_pivot");
     private Transform playerObject => transform.Find("active_model");
-    
+
     private float rotation { get; set; }
     private float zoom { get; set; } = 35;
     private float angle { get; set; } = 1;
 
-    public void RotateCamera(bool left_button, bool right_button)
+    public void RotateCamera(float rotationAmount)
     {
-        if (left_button && right_button)
-        {
-            rotation = 0;
-        }
-        else if (left_button)
-        {
-            rotation -= RotationSpeed * Time.deltaTime;
-        }
+        if (Mathf.Approximately(rotationAmount,0)) return;
 
-        else if (right_button)
-        {
-            rotation += RotationSpeed * Time.deltaTime;
-        }
+        rotation += rotationAmount * RotationSpeed * Time.deltaTime;
 
         var rotate = Quaternion.Euler(0, rotation, 0);
-
         cameraPivot.rotation = Quaternion.Lerp(cameraPivot.rotation, rotate, Time.deltaTime * RotationLerpSpeed);
     }
 
@@ -87,19 +77,9 @@ public class uCamera : MonoBehaviour
         move up.
      */
 
-    public void AngleCamera(bool dpad_left, bool dpad_right)
+    public void AngleCamera(float angleAmount)
     {
-        if (dpad_left)
-        {
-            angle -= Time.deltaTime;
-            Debug.Log($"angle is now {angle}");
-        }
-        else if (dpad_right)
-        {
-            angle += Time.deltaTime;
-            Debug.Log($"angle is now {angle}");
-        }
-
+        angle += AngleSpeed * angleAmount * Time.deltaTime;
         angle = Mathf.Clamp(angle, MinAngleClamp, MaxAngleClamp);
     }
 }

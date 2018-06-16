@@ -422,6 +422,7 @@ MonoBehaviour:
   RotationSpeed: 150
   MinAngleClamp: -0.4
   MaxAngleClamp: 1
+  AngleSpeed: 2
   MinZoomClamp: 20
   MaxZoomClamp: 100
   ZoomSpeed: 50

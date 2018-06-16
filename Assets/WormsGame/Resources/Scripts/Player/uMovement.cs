@@ -26,7 +26,7 @@ public class uMovement : MonoBehaviour
         }
 
         moveDirection.y = gravity;
-
+        Rotate();
         ApplyMovement();
     }
 
@@ -44,9 +44,9 @@ public class uMovement : MonoBehaviour
         }
     }
 
-    public void Rotate(Vector3 direction)
+    public void Rotate()
     {
-        lookDirection = direction != Vector3.zero ? Quaternion.LookRotation(cameraPivot.TransformDirection(direction)) : lookDirection = active_model.rotation;
+        lookDirection = Quaternion.LookRotation(cameraPivot.transform.forward);
 
         float step = 360 * Time.deltaTime;
 
