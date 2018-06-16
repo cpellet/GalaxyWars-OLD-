@@ -83,13 +83,13 @@ public class uController : NetworkBehaviour
     {
         playerMovement.Move(new Vector2(Owner.GetAxis("L_HORIZONTAL"), -Owner.GetAxis("L_VERTICAL")));
 
-        playerCamera.RotateCamera(Owner.GetButton("L_BUTTON"), Owner.GetButton("R_BUTTON"));
+        playerCamera.RotateCamera(Owner.GetButton("DPAD_RIGHT"), Owner.GetButton("DPAD_LEFT"));
 
-        playerCamera.MoveCamera();
+        playerCamera.MoveCamera(); 
 
-        playerCamera.ZoomCamera(Owner.GetButton("DPAD_UP"), Owner.GetButton("DPAD_DOWN"));
+        playerCamera.ZoomCamera(Owner.GetButton("L_BUTTON"), Owner.GetButton("R_BUTTON"));
 
-        playerCamera.AngleCamera(Owner.GetButton("DPAD_LEFT"), Owner.GetButton("DPAD_RIGHT"));
+        playerCamera.AngleCamera(Owner.GetButton("DPAD_UP"), Owner.GetButton("DPAD_DOWN"));
 
         playerMovement.Rotate(new Vector3(Owner.GetAxis("R_HORIZONTAL"), 0, -Owner.GetAxis("R_VERTICAL")));
     }

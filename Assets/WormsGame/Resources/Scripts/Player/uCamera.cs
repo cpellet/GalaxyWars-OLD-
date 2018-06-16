@@ -6,16 +6,20 @@ using System;
 
 public class uCamera : MonoBehaviour
 {
-    [SerializeField] private float angleMultiplier = 20;
+    [SerializeField] private float RotationLerpSpeed = 7.0f;
+    [SerializeField] private float RotationSpeed = 85;
 
+    [SerializeField] private float MinAngleClamp = 0.2f;
+    [SerializeField] private float MaxAngleClamp = 1f;
+
+    [SerializeField] private int MinZoomClamp = 20;
+    [SerializeField] private int MaxZoomClamp = 50;
+    [SerializeField] private int ZoomSpeed = 35;
 
     private Transform cameraObject => transform.Find("camera");
     private Transform cameraPivot => transform.Find("camera_pivot");
     private Transform playerObject => transform.Find("active_model");
-    private float speed { get; set; } = 1;
-    private bool isLocalPlayer { get; set; } = true;
-    private Vector3 velocity;
-    // private Vector3 targetPosition;
+    
     private float rotation { get; set; }
     private float zoom { get; set; } = 35;
     private float angle { get; set; } = 1;
@@ -28,17 +32,17 @@ public class uCamera : MonoBehaviour
         }
         else if (left_button)
         {
-            rotation -= 85 * Time.deltaTime;
+            rotation -= RotationSpeed * Time.deltaTime;
         }
 
         else if (right_button)
         {
-            rotation += 85 * Time.deltaTime;
+            rotation += RotationSpeed * Time.deltaTime;
         }
 
         var rotate = Quaternion.Euler(0, rotation, 0);
 
-        cameraPivot.rotation = Quaternion.Lerp(cameraPivot.rotation, rotate, Time.deltaTime * 7);
+        cameraPivot.rotation = Quaternion.Lerp(cameraPivot.rotation, rotate, Time.deltaTime * RotationLerpSpeed);
     }
 
     public void MoveCamera()
@@ -47,13 +51,13 @@ public class uCamera : MonoBehaviour
         // cameraPivot.position = Vector3.SmoothDamp(cameraPivot.position, targetPosition, ref velocity, 0.25f);
 
         cameraObject.position = playerObject.position - cameraPivot.forward * (zoom / 2) + Vector3.up * zoom;
-        cameraPivot.position = transform.position + Vector3.up * ((zoom / 2) - angle * angleMultiplier);
+        cameraPivot.position = transform.position + Vector3.up * ((zoom / 2) - angle * 10);
 
         cameraObject.LookAt(cameraPivot);
     }
 
 #if UNITY_EDITOR
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = new Color(1, 0, 0, .5f);
         Gizmos.DrawSphere(cameraPivot.position, .4f);
@@ -64,16 +68,16 @@ public class uCamera : MonoBehaviour
     {
         if (left_up)
         {
-            zoom -= 35 * Time.deltaTime;
+            zoom -= ZoomSpeed * Time.deltaTime;
             Debug.Log($"zoom is now {zoom}");
         }
         else if (left_down)
         {
-            zoom += 35 * Time.deltaTime;
+            zoom += ZoomSpeed * Time.deltaTime;
             Debug.Log($"zoom is now {zoom}");
         }
 
-        zoom = Mathf.Clamp(zoom, 20, 50);
+        zoom = Mathf.Clamp(zoom, MinZoomClamp, MaxZoomClamp);
     }
 
     /*
@@ -96,6 +100,6 @@ public class uCamera : MonoBehaviour
             Debug.Log($"angle is now {angle}");
         }
 
-        angle = Mathf.Clamp(angle, 0.2f, 1f);
+        angle = Mathf.Clamp(angle, MinAngleClamp, MaxAngleClamp);
     }
 }

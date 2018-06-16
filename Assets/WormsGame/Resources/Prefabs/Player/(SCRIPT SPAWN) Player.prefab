@@ -418,6 +418,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e14e9767b13f948940b00df85679c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RotationLerpSpeed: 7
+  RotationSpeed: 150
+  MinAngleClamp: -0.4
+  MaxAngleClamp: 1
+  MinZoomClamp: 20
+  MaxZoomClamp: 100
+  ZoomSpeed: 50
 --- !u!124 &124941879850086238
 Behaviour:
   m_ObjectHideFlags: 1
