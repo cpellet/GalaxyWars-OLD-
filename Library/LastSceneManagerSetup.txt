@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/WormsGame/Scenes/Worms.unity
+- path: Assets/Alpha-Mechanics/WeaponManagement.unity
   isLoaded: 1
   isActive: 1
