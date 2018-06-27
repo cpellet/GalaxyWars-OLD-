@@ -14,6 +14,7 @@ public class WeaponSwitching : MonoBehaviour {
 
 		int previousSelectedSlot = activeSlot;
 
+		//Scroll wheel support
 		if (Input.GetAxis("Mouse ScrollWheel") > 0f){
 			if (activeSlot >= transform.childCount -1){
 				activeSlot = 0;
@@ -29,6 +30,7 @@ public class WeaponSwitching : MonoBehaviour {
 			}
 		}
 
+		//Numeric keys support
 		if (Input.GetKeyDown(KeyCode.Alpha1)){
 			activeSlot = 0;
 		}
@@ -49,11 +51,13 @@ public class WeaponSwitching : MonoBehaviour {
 			activeSlot = 4;
 		}
 
+		//If changed, update active slot
 		if (previousSelectedSlot != activeSlot){
 			SelectSlot();
 		}
 	}
 
+	//Enable and disable slots
 	void SelectSlot(){
 		int i = 0;
 		foreach (Transform slot in transform){
