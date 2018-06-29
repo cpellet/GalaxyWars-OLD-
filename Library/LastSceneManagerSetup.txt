@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Alpha-Mechanics/WeaponManagement.unity
+- path: Assets/Alpha-Mechanics/Procedural map/Procedural map.unity
   isLoaded: 1
   isActive: 1
