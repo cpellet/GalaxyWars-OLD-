@@ -51,7 +51,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Alpha-Mechanics\Async\LoadingManager.cs" />
+     <Compile Include="Assets\Alpha-Mechanics\MainMenu\LoadingManager.cs" />
+     <Compile Include="Assets\Alpha-Mechanics\MainMenu\UI Samples\Scripts\ActiveStateToggler.cs" />
+     <Compile Include="Assets\Alpha-Mechanics\MainMenu\UI Samples\Scripts\ApplicationManager.cs" />
+     <Compile Include="Assets\Alpha-Mechanics\MainMenu\UI Samples\Scripts\ChangeColor.cs" />
+     <Compile Include="Assets\Alpha-Mechanics\MainMenu\UI Samples\Scripts\DragMe.cs" />
+     <Compile Include="Assets\Alpha-Mechanics\MainMenu\UI Samples\Scripts\DragPanel.cs" />
+     <Compile Include="Assets\Alpha-Mechanics\MainMenu\UI Samples\Scripts\DropMe.cs" />
+     <Compile Include="Assets\Alpha-Mechanics\MainMenu\UI Samples\Scripts\PanelManager.cs" />
+     <Compile Include="Assets\Alpha-Mechanics\MainMenu\UI Samples\Scripts\ResizePanel.cs" />
+     <Compile Include="Assets\Alpha-Mechanics\MainMenu\UI Samples\Scripts\ScrollDetailTexture.cs" />
+     <Compile Include="Assets\Alpha-Mechanics\MainMenu\UI Samples\Scripts\ShowSliderValue.cs" />
+     <Compile Include="Assets\Alpha-Mechanics\MainMenu\UI Samples\Scripts\TiltWindow.cs" />
      <Compile Include="Assets\Alpha-Mechanics\Weapon Management\Cinemachine\Base\Runtime\Behaviours\CinemachineBlendListCamera.cs" />
      <Compile Include="Assets\Alpha-Mechanics\Weapon Management\Cinemachine\Base\Runtime\Behaviours\CinemachineBrain.cs" />
      <Compile Include="Assets\Alpha-Mechanics\Weapon Management\Cinemachine\Base\Runtime\Behaviours\CinemachineClearShot.cs" />
@@ -123,13 +134,16 @@
      <Compile Include="Assets\WormsGame\Resources\Shaders\Lava_Flowing_Shader\Scripts\ScrollingUVs_Layers.cs" />
      <None Include="Assets\WormsGame\Resources\Shaders\Lava_Flowing_Shader\Shaders\Unlit_Lava_Simple.shader" />
      <None Include="Assets\WormsGame\Resources\Shaders\Lava_Flowing_Shader\Shaders\Diffuse_Lava_Distort.shader" />
+     <None Include="Assets\Alpha-Mechanics\MainMenu\UI Samples\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\WormsGame\Resources\Shaders\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort.shader" />
      <None Include="Assets\WormsGame\Resources\Shaders\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort_Transparent.shader" />
      <None Include="Assets\Alpha-Mechanics\Weapon Management\Cinemachine\ReleaseNotes.txt" />
+     <None Include="Assets\Alpha-Mechanics\MainMenu\UI Samples\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\UnityPark\uEcho\uEchoLicense.txt" />
      <None Include="Assets\WormsGame\Resources\Materials\Textures\Cartoon Textures\README.txt" />
      <None Include="Assets\WormsGame\Resources\Shaders\Lava_Flowing_Shader\ReadMe.txt" />
      <None Include="Assets\WormsGame\Resources\Shaders\VertexColor.shader" />
+     <None Include="Assets\Alpha-Mechanics\MainMenu\UI Samples\Materials\UI-Default-No-Alpha.shader" />
  <Reference Include="com.unity.render-pipelines.core.Editor">
  <HintPath>/Users/cyruspellet/Documents/GitHub/GalaxyWars/Library/ScriptAssemblies/com.unity.render-pipelines.core.Editor.dll</HintPath>
  </Reference>

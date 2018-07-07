@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Alpha-Mechanics/Async/Loading Scene.unity
+- path: Assets/Alpha-Mechanics/MainMenu/MainMenu.unity
   isLoaded: 1
   isActive: 1
