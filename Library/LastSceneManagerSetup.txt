@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Alpha-Mechanics/Procedural map/Procedural map.unity
+- path: Assets/Alpha-Mechanics/Async/Loading Scene.unity
   isLoaded: 1
   isActive: 1

@@ -51,11 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Alpha-Mechanics\Procedural map\MapDisplay.cs" />
-     <Compile Include="Assets\Alpha-Mechanics\Procedural map\MapGenerator.cs" />
-     <Compile Include="Assets\Alpha-Mechanics\Procedural map\MeshGenerator.cs" />
-     <Compile Include="Assets\Alpha-Mechanics\Procedural map\Noise.cs" />
-     <Compile Include="Assets\Alpha-Mechanics\Procedural map\TextureGenerator.cs" />
+     <Compile Include="Assets\Alpha-Mechanics\Async\LoadingManager.cs" />
      <Compile Include="Assets\Alpha-Mechanics\Weapon Management\Cinemachine\Base\Runtime\Behaviours\CinemachineBlendListCamera.cs" />
      <Compile Include="Assets\Alpha-Mechanics\Weapon Management\Cinemachine\Base\Runtime\Behaviours\CinemachineBrain.cs" />
      <Compile Include="Assets\Alpha-Mechanics\Weapon Management\Cinemachine\Base\Runtime\Behaviours\CinemachineClearShot.cs" />
